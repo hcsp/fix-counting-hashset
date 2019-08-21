@@ -16,6 +16,7 @@ public class CountingSet extends HashSet<Object> {
 
     @Override
     public boolean addAll(Collection c) {
+        count += c.size();
         return super.addAll(c);
     }
 
@@ -27,10 +28,10 @@ public class CountingSet extends HashSet<Object> {
     // 但是，现在结果明显不对
     // 请尝试修复此问题
     public static void main(String[] args) {
-        CountingSet set = new CountingSet();
-        set.addAll(Arrays.asList(1, 1, 2, 2, 3, 3));
-        set.removeAll(Arrays.asList(1, 2, 3));
-        set.addAll(Arrays.asList(1, 2));
-        System.out.println(set.getCount());
+        CountingSet countingSet = new CountingSet();
+        countingSet.add(new Object());
+        countingSet.addAll(Arrays.asList(1, 2, 3));
+
+        System.out.println(countingSet.getCount());
     }
 }
