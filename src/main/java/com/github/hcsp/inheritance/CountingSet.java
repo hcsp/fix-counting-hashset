@@ -14,9 +14,10 @@ public class CountingSet extends HashSet<Object> {
         return super.add(obj);
     }
 
+    //成员方法的调用是动态绑定的
+    //即使这里用super调用了父类的addAll方法，但其中的add方法还是绑定到了子类中的add方法
     @Override
     public boolean addAll(Collection c) {
-        count += c.size();
         return super.addAll(c);
     }
 
