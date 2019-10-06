@@ -19,6 +19,18 @@ public class CountingSet {
         return set.addAll(c);
     }
 
+    public boolean remove(Object obj) {
+        return set.remove(obj);
+    }
+
+    public boolean removeAll(Collection c) {
+        return set.removeAll(c);
+    }
+
+    public int size() {
+        return set.size();
+    }
+
     public int getCount() {
         return count;
     }
