@@ -1,7 +1,6 @@
 package com.github.hcsp.inheritance;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashSet;
 
 public class CountingSet extends HashSet<Object> {
@@ -12,12 +11,6 @@ public class CountingSet extends HashSet<Object> {
     public boolean add(Object obj) {
         count++;
         return super.add(obj);
-    }
-
-    @Override
-    public boolean addAll(Collection c) {
-        count += c.size();
-        return super.addAll(c);
     }
 
     public int getCount() {
