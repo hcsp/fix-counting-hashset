@@ -14,16 +14,15 @@ public class CountingSet extends HashSet<Object> {
         return super.add(obj);
     }
 
-    @Override
-    public boolean addAll(Collection c) {
-        count += c.size();
-        return super.addAll(c);
-    }
+//    @Override
+//    public boolean addAll(Collection c) {
+//        count += c.size();
+//        return super.addAll(c);
+//    }
 
     public int getCount() {
         return count;
     }
-
     // 我们希望创建一个Set，能够统计"有史以来"添加到其中去的元素个数
     // 但是，现在结果明显不对
     // 请尝试修复此问题
