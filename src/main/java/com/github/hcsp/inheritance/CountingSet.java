@@ -16,7 +16,7 @@ public class CountingSet extends HashSet<Object> {
 
     @Override
     public boolean addAll(Collection c) {
-        count += c.size();
+//        count += c.size();
         return super.addAll(c);
     }
 
@@ -31,7 +31,6 @@ public class CountingSet extends HashSet<Object> {
         CountingSet countingSet = new CountingSet();
         countingSet.add(new Object());
         countingSet.addAll(Arrays.asList(1, 2, 3));
-
         System.out.println(countingSet.getCount());
     }
 }
