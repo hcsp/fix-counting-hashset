@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CountingSet {
     HashSet<Object> set = new HashSet<>();
-    /** 统计"有史以来"向该集合中添加过的元素个数 */
+    /** 统计"有史以来"向该集合中添加过的元素的个数 */
     private int count = 0;
 
     public boolean add(Object obj) {
