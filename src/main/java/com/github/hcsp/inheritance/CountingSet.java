@@ -3,40 +3,27 @@ package com.github.hcsp.inheritance;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 
-public class CountingSet {
-    /**
-     * 统计"有史以来"向该集合中添加过的元素个数
-     */
-    HashSet<Object> hsObj = new HashSet<>();
+public class CountingSet extends HashSet<Object> {
+    /** 统计"有史以来"向该集合中添加过的元素个数 */
     private int count = 0;
 
+    @Override
     public boolean add(Object obj) {
         count++;
-        return hsObj.add(obj);
+        return super.add(obj);
     }
 
+    @Override
     public boolean addAll(Collection c) {
-        count += c.size();
-        return hsObj.addAll(c);
+//        count += c.size();
+        return super.addAll(c);
     }
 
     public int getCount() {
         return count;
     }
 
-    public void remove(Object obj) {
-        hsObj.remove(obj);
-    }
-
-    public int size() {
-        return hsObj.size();
-    }
-
-    public void removeAll(Collection c) {
-        hsObj.removeAll(c);
-    }
     // 我们希望创建一个Set，能够统计"有史以来"添加到其中去的元素个数
     // 但是，现在结果明显不对
     // 请尝试修复此问题
@@ -47,5 +34,4 @@ public class CountingSet {
 
         System.out.println(countingSet.getCount());
     }
-
 }
