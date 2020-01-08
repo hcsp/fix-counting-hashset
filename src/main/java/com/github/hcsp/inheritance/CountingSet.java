@@ -37,7 +37,6 @@ public class CountingSet {
     public void removeAll(Collection c) {
         hsObj.removeAll(c);
     }
-
     // 我们希望创建一个Set，能够统计"有史以来"添加到其中去的元素个数
     // 但是，现在结果明显不对
     // 请尝试修复此问题
