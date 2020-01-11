@@ -1,36 +1,23 @@
 package com.github.hcsp.inheritance;
 
-import java.util.AbstractCollection;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class CountingSet  {
+public class CountingSet extends HashSet<Object> {
     /** 统计"有史以来"向该集合中添加过的元素个数 */
     private int count = 0;
-    HashSet hashset=new HashSet();
-    //AbstractCollection abstractco=new AbstractCollection();
 
-    //@Override
+    @Override
     public boolean add(Object obj) {
         count++;
-        return hashset.add(obj);
+        return super.add(obj);
     }
 
-    //@Override
+    @Override
     public boolean addAll(Collection c) {
         count += c.size();
-        return hashset.addAll(c);
-    }
-
-    public boolean remove(Object o){
-        return hashset.remove(o);
-    }
-    public boolean removeAll(Collection c){
-        return hashset.removeAll(c);
-    }
-    public int size(){
-        return hashset.size();
+        return super.addAll(c);
     }
 
     public int getCount() {
