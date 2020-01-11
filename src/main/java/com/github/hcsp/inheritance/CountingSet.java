@@ -6,7 +6,7 @@ import java.util.HashSet;
 
 public class CountingSet {
     /**统计"有史以来"向该集合中添加过的元素个数*/
-    HashSet set = new HashSet();
+    HashSet<Object> set = new HashSet<Object>();
 
     private int count = 0;
 
