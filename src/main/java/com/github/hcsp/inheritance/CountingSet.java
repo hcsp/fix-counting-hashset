@@ -43,12 +43,6 @@ public class CountingSet {
     public static void main(String[] args) {
         CountingSet countingSet = new CountingSet();
         countingSet.add(new Object());
-        countingSet.add(1);
-        countingSet.remove(1);
-        countingSet.add(2);
-        countingSet.remove(2);
-        countingSet.add(3);
-        countingSet.remove(3);
         countingSet.addAll(Arrays.asList(1, 2, 3));
 
         System.out.println(countingSet.getCount());
