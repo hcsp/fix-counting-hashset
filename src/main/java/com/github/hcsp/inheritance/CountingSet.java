@@ -4,20 +4,33 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class CountingSet extends HashSet<Object> {
-    /** 统计"有史以来"向该集合中添加过的元素个数 */
+public class CountingSet {
+    /**
+     * 统计"有史以来"向该集合中添加过的元素个数
+     */
     private int count = 0;
+    HashSet hs = new HashSet();
 
-    @Override
     public boolean add(Object obj) {
         count++;
-        return super.add(obj);
+        return hs.add(obj);
     }
 
-    @Override
     public boolean addAll(Collection c) {
         count += c.size();
-        return super.addAll(c);
+        return hs.addAll(c);
+    }
+
+    public boolean remove(Object o) {
+        return hs.remove(o);
+    }
+
+    public boolean removeAll(Collection c) {
+        return hs.removeAll(c);
+    }
+
+    public int size(){
+        return hs.size();
     }
 
     public int getCount() {
