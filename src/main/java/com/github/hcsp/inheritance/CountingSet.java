@@ -3,6 +3,7 @@ package com.github.hcsp.inheritance;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 
 public class CountingSet {
     HashSet<Object> set = new HashSet<>();
@@ -34,5 +35,15 @@ public class CountingSet {
         countingSet.addAll(Arrays.asList(1, 2, 3));
 
         System.out.println(countingSet.getCount());
+    }
+
+    public void remove(int i) {
+    }
+
+    public void removeAll(List<Integer> asList) {
+    }
+
+    public int size() {
+        return 0;
     }
 }
