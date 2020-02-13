@@ -37,13 +37,18 @@ public class CountingSet {
         System.out.println(countingSet.getCount());
     }
 
-    public void remove(int i) {
+
+    public boolean remove(int i) {
+
+        return set.remove(i);
     }
 
-    public void removeAll(List<Integer> asList) {
+    public boolean removeAll(Object obj) {
+
+        return set.removeAll((Collection<?>) obj);
     }
 
     public int size() {
-        return 0;
+        return set.size();
     }
 }
