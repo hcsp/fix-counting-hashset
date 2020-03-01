@@ -1,25 +1,37 @@
 package com.github.hcsp.inheritance;
 
+import com.sun.org.apache.xpath.internal.objects.XObject;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class CountingSet extends HashSet<Object> {
-    /** 统计"有史以来"向该集合中添加过的元素个数 */
+public class CountingSet {
+    /**
+     * 统计"有史以来"向该集合中添加过的元素个数
+     */
+    HashSet<Object> set = new HashSet<>();
     private int count = 0;
+    public int size() {
+        return set.size();
+    }
 
-    @Override
+    public boolean remove(Object o) {
+        return set.remove(o);
+    }
+    public boolean removeAll(Collection c) {
+        return set.removeAll(c);
+    }
+    //    @Override
     public boolean add(Object obj) {
         count++;
-        return super.add(obj);
+        return set.add(obj);
     }
-
-    @Override
+    //    @Override
     public boolean addAll(Collection c) {
         count += c.size();
-        return super.addAll(c);
+        return set.addAll(c);
     }
-
     public int getCount() {
         return count;
     }
@@ -31,7 +43,6 @@ public class CountingSet extends HashSet<Object> {
         CountingSet countingSet = new CountingSet();
         countingSet.add(new Object());
         countingSet.addAll(Arrays.asList(1, 2, 3));
-
         System.out.println(countingSet.getCount());
     }
 }
