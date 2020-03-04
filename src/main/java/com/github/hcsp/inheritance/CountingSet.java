@@ -14,11 +14,7 @@ public class CountingSet {
         return hashSet.add(obj);
     }
     public boolean remove(Object obj){
-        boolean res = hashSet.remove(obj);
-        if(res){
-            count --;
-        }
-        return res;
+        return hashSet.remove(obj);
     }
 
     public boolean addAll(Collection c) {
@@ -26,15 +22,11 @@ public class CountingSet {
         return hashSet.addAll(c);
     }
     public boolean removeAll(Collection c){
-        boolean res = hashSet.removeAll(c);
-        if(res){
-            count -= c.size();
-        }
-        return res;
+        return hashSet.remove(c);
     }
 
     public int size(){
-        return count;
+        return hashSet.size();
     }
     public int getCount() {
         return count;
