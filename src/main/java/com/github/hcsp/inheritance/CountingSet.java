@@ -22,7 +22,7 @@ public class CountingSet {
         return hashSet.addAll(c);
     }
     public boolean removeAll(Collection c){
-        return hashSet.remove(c);
+        return hashSet.removeAll(c);
     }
 
     public int size(){
