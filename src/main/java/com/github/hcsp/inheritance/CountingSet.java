@@ -44,7 +44,7 @@ public class CountingSet {
     }
 
     public boolean removeAll(Collection c) {
-        return set.remove(c);
+        return set.removeAll(c);
     }
 
     public int size() {
