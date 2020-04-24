@@ -10,14 +10,10 @@ public class CountingSet extends HashSet<Object> {
 
     @Override
     public boolean add(Object obj) {
-        count++;
+        if(obj != null) {
+            count++;
+        }
         return super.add(obj);
-    }
-
-    @Override
-    public boolean addAll(Collection c) {
-        count += c.size();
-        return super.addAll(c);
     }
 
     public int getCount() {
