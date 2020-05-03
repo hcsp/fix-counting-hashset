@@ -8,23 +8,35 @@ public class CountingSet {
     /**
      * 统计"有史以来"向该集合中添加过的元素个数
      */
-    HashSet<Object> hashset = new HashSet<>();
+    HashSet<Object> set = new HashSet<>();
     private int count = 0;
 
 
     public boolean add(Object obj) {
         count++;
-        return hashset.add(obj);
+        return set.add(obj);
     }
 
 
     public boolean addAll(Collection c) {
         count += c.size();
-        return hashset.addAll(c);
+        return set.addAll(c);
     }
 
     public int getCount() {
         return count;
+    }
+
+    public void remove(Object o) {
+        set.remove(o);
+    }
+
+    public boolean removeAll(Collection collection) {
+        return set.removeAll(collection);
+    }
+
+    public int size() {
+        return set.size();
     }
 
     // 我们希望创建一个Set，能够统计"有史以来"添加到其中去的元素个数
