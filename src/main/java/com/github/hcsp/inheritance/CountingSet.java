@@ -5,19 +5,20 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class CountingSet extends HashSet<Object> {
+    HashSet<Object> set = new HashSet<>();
     /** 统计"有史以来"向该集合中添加过的元素个数 */
     private int count = 0;
 
-    @Override
+//    @Override
     public boolean add(Object obj) {
         count++;
-        return super.add(obj);
+        return set.add(obj);
     }
 
-    @Override
+//    @Override
     public boolean addAll(Collection c) {
         count += c.size();
-        return super.addAll(c);
+        return set.addAll(c);
     }
 
     public int getCount() {
@@ -32,6 +33,6 @@ public class CountingSet extends HashSet<Object> {
         countingSet.add(new Object());
         countingSet.addAll(Arrays.asList(1, 2, 3));
 
-        System.out.println(countingSet.getCount());
+        System.out.println(countingSet.count);
     }
 }
