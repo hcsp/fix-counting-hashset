@@ -3,10 +3,11 @@ package com.github.hcsp.inheritance;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 
-public class CountingSet  {
-    /** 统计"有史以来"向该集合中添加过的元素个数 */
+public class CountingSet {
+    /**
+     * 统计"有史以来"向该集合中添加过的元素个数
+     */
     private int count = 0;
     private HashSet<Object> hashSet = new HashSet<>();
 
