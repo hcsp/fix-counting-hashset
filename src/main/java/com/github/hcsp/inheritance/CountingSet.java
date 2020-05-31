@@ -23,12 +23,10 @@ public class CountingSet {
     }
 
     public boolean remove(Object obj) {
-        count--;
         return set.remove(obj);
     }
 
     public boolean removeAll(Collection c) {
-        count -= c.size();
         return set.removeAll(c);
     }
 
