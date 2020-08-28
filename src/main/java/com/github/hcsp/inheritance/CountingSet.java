@@ -16,7 +16,9 @@ public class CountingSet extends HashSet<Object> {
 
     @Override
     public boolean addAll(Collection c) {
-        count += c.size();
+//        count += c.size();
+//        错误原因是：子类重写方法后，调用时会调用重写后的方法。
+//        这题super.addAll调用的父类方法调用了add()方法，而add()已经被子类重写，重写的add方法里面有count++,所以addAll中不用再加c.size()了
         return super.addAll(c);
     }
 
