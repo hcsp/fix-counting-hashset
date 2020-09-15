@@ -34,7 +34,7 @@ public class CountingSet extends HashSet<Object> {
         CountingSet countingSet = new CountingSet();
         //創建一個對象添加
         countingSet.add(new Object());
-        //添加三個對象
+        //添加三個對象了
         countingSet.addAll(Arrays.asList(1, 2, 3));
 
         System.out.println(countingSet.getCount());
