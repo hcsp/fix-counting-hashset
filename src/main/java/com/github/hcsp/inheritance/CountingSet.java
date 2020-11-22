@@ -2,26 +2,44 @@ package com.github.hcsp.inheritance;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 
-public class CountingSet extends HashSet<Object> {
+public class CountingSet{
+    HashSet<Object> hashSet = new HashSet<>();
     /** 统计"有史以来"向该集合中添加过的元素个数 */
     private int count = 0;
 
-    @Override
-    public boolean add(Object obj) {
-        count++;
-        return super.add(obj);
+    public void add(Object obj) {
+        this.hashSet.add(obj);
+        this.setCount(hashSet.size());
     }
 
-    @Override
-    public boolean addAll(Collection c) {
-        count += c.size();
-        return super.addAll(c);
+    public void addAll(Collection c) {
+        this.hashSet.addAll(c);
+        this.setCount(hashSet.size());
+    }
+
+    public void remove(Object obj) {
+        this.hashSet.remove(obj);
+        this.setCount(hashSet.size());
+    }
+
+    public void removeAll(Collection c) {
+        this.hashSet.removeAll(c);
+        this.setCount(hashSet.size());
     }
 
     public int getCount() {
-        return count;
+        return this.count;
+    }
+
+    public int size() {
+        return this.hashSet.size();
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     // 我们希望创建一个Set，能够统计"有史以来"添加到其中去的元素个数
