@@ -12,22 +12,20 @@ public class CountingSet{
 
     public void add(Object obj) {
         this.hashSet.add(obj);
-        this.setCount(hashSet.size());
+        this.setCount(1);
     }
 
     public void addAll(Collection c) {
         this.hashSet.addAll(c);
-        this.setCount(hashSet.size());
+        this.setCount(c.size());
     }
 
     public void remove(Object obj) {
         this.hashSet.remove(obj);
-        this.setCount(hashSet.size());
     }
 
     public void removeAll(Collection c) {
         this.hashSet.removeAll(c);
-        this.setCount(hashSet.size());
     }
 
     public int getCount() {
@@ -39,7 +37,7 @@ public class CountingSet{
     }
 
     public void setCount(int count) {
-        this.count = count;
+        this.count += count;
     }
 
     // 我们希望创建一个Set，能够统计"有史以来"添加到其中去的元素个数
