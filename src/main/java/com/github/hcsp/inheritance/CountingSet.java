@@ -10,6 +10,7 @@ public class CountingSet extends HashSet<Object> {
      */
     private int count = 0;
     HashSet<Object> set = new HashSet<>();
+
     @Override
     public boolean add(Object obj) {
         count++;
@@ -21,10 +22,12 @@ public class CountingSet extends HashSet<Object> {
         count += c.size();
         return set.addAll(c);
     }
+
     @Override
     public boolean remove(Object obj) {
         return set.remove(obj);
     }
+
     @Override
     public boolean removeAll(Collection c) {
         return set.removeAll(c);
