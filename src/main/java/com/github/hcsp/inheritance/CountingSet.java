@@ -9,14 +9,11 @@ public class CountingSet {
      * 统计"有史以来"向该集合中添加过的元素个数
      */
     private int count = 0;
-    // 创建一个单例模式的对象
     private static final HashSet<Object> set = new HashSet<>();
 
-    // 让构造函数为private
     CountingSet() {
     }
 
-    //获取唯一可用的对象？
     public boolean add(Object obj) {
         count++;
         return set.add(obj);
@@ -28,7 +25,6 @@ public class CountingSet {
         set.addAll(c);
     }
 
-    // 实现remove的方法
 
     public int getCount() {
         return count;
