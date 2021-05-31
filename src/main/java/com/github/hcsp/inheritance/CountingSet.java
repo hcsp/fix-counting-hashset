@@ -16,13 +16,7 @@ public class CountingSet extends HashSet<Object> {
 
     @Override
     public boolean addAll(Collection c) {
-        boolean contient=true;
-        for(Object x:c){
-            if(this.add(x)){
-             contient=false;
-            }
-        }
-        return contient;
+        return super.addAll(c);
     }
 
     public int getCount() {
