@@ -5,9 +5,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class CountingSet extends HashSet<Object> {
-    /**
-     * 统计"有史以来"向该集合中添加过的元素个数
-     */
+    /** 统计"有史以来"向该集合中添加过的元素个数 */
     private int count = 0;
 
     @Override
@@ -18,13 +16,8 @@ public class CountingSet extends HashSet<Object> {
 
     @Override
     public boolean addAll(Collection c) {
-        boolean contains = true;
-        for (Object x : c) {
-            if (add(x) == false) {
-                contains = false;
-            }
-        }
-        return contains;
+        count += c.size();
+        return super.addAll(c);
     }
 
     public int getCount() {
