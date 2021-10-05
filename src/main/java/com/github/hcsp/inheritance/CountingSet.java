@@ -1,12 +1,10 @@
 package com.github.hcsp.inheritance;
 
-import org.w3c.dom.css.CSSUnknownRule;
-
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class CountingSet extends HashSet<Object>{
+public class CountingSet extends HashSet<Object> {
     /** 统计"有史以来"向该集合中添加过的元素个数 */
     private int count = 0;
 
@@ -16,8 +14,9 @@ public class CountingSet extends HashSet<Object>{
         return super.add(obj);
     }
 
+    @Override
     public boolean addAll(Collection c) {
-    //    count += c.size();
+        count += c.size();
         return super.addAll(c);
     }
 
