@@ -31,8 +31,8 @@ public class CountingSet {
         return countingSet.size();
     }
 
-    public boolean removeAll(List<Object> values) {
-        return countingSet.removeAll(Collections.singletonList(values));
+    public boolean removeAll(Collection<Object> values) {
+        return countingSet.removeAll(values);
     }
 
     // 我们希望创建一个Set，能够统计"有史以来"添加到其中去的元素个数
