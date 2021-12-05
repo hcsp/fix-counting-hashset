@@ -6,8 +6,9 @@ import java.util.HashSet;
 
 public class CountingSet extends HashSet<Object> {
     /** 统计"有史以来"向该集合中添加过的元素个数 */
-    HashSet<Object> set = new HashSet<>();
+
     private int count = 0;
+    HashSet<Object> set = new HashSet<>();
 
    // @Override
     public boolean add(Object obj) {
@@ -25,6 +26,16 @@ public class CountingSet extends HashSet<Object> {
         return count;
     }
 
+    public boolean remove(Object obj) {
+        return set.remove(obj);
+    }
+
+    public boolean removeAll(Collection c) {
+        return set.removeAll(c);
+    }
+    public int size() {
+        return set.size();
+    }
     // 我们希望创建一个Set，能够统计"有史以来"添加到其中去的元素个数
     // 但是，现在结果明显不对
     // 请尝试修复此问题
