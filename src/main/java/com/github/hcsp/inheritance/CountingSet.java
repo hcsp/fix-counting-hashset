@@ -4,25 +4,36 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class CountingSet extends HashSet<Object> {
+public class CountingSet {
     /** 统计"有史以来"向该集合中添加过的元素个数 */
     private int count = 0;
-
-    @Override
+    HashSet<Object> set = new HashSet<>();
     public boolean add(Object obj) {
         count++;
-        return super.add(obj);
+        return set.add(obj);
     }
 
-    @Override
     public boolean addAll(Collection c) {
         count += c.size();
-        return super.addAll(c);
+        return set.addAll(c);
     }
 
     public int getCount() {
         return count;
     }
+
+    public int size() {
+        return set.size();
+    }
+
+    public boolean remove(Object o) {
+        return set.remove(o);
+    }
+
+    public boolean removeAll(Collection c){
+        return set.removeAll(c);
+    }
+
 
     // 我们希望创建一个Set，能够统计"有史以来"添加到其中去的元素个数
     // 但是，现在结果明显不对
@@ -31,7 +42,6 @@ public class CountingSet extends HashSet<Object> {
         CountingSet countingSet = new CountingSet();
         countingSet.add(new Object());
         countingSet.addAll(Arrays.asList(1, 2, 3));
-
         System.out.println(countingSet.getCount());
     }
 }
