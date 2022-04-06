@@ -19,13 +19,13 @@ public class CountingSet  {
         count += c.size();
         return set.addAll(c);
     }
-    public void remove(Object obj) {
+    public boolean remove(Object obj) {
         count--;
-        set.remove(obj);
+        return set.remove(obj);
     }
-    public void removeAll(Collection c) {
+    public boolean removeAll(Collection c) {
         count -= c.size();
-        set.removeAll(c);
+        return set.removeAll(c);
     }
     public int size() {
         return count;
