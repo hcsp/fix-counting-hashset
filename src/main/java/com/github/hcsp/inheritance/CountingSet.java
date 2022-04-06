@@ -26,7 +26,7 @@ public class CountingSet  {
         return set.removeAll(c);
     }
     public int size() {
-        return count;
+        return set.size();
     }
 
 
