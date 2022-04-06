@@ -20,9 +20,11 @@ public class CountingSet  {
         return set.addAll(c);
     }
     public void remove(Object obj) {
+        count--;
         set.remove(obj);
     }
     public void removeAll(Collection c) {
+        count -= c.size();
         set.removeAll(c);
     }
     public int size() {
