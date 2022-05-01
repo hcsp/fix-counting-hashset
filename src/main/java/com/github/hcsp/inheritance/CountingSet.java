@@ -3,23 +3,21 @@ package com.github.hcsp.inheritance;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 
-public class CountingSet {
-    HashSet<Object> set = new HashSet<>();
+public class CountingSet extends HashSet<Object> {
     /** 统计"有史以来"向该集合中添加过的元素个数 */
     private int count = 0;
 
-
+    @Override
     public boolean add(Object obj) {
         count++;
-        return set.add(obj);
+        return super.add(obj);
     }
 
-
+    @Override
     public boolean addAll(Collection c) {
         count += c.size();
-        return set.addAll(c);
+        return super.addAll(c);
     }
 
     public int getCount() {
@@ -35,17 +33,5 @@ public class CountingSet {
         countingSet.addAll(Arrays.asList(1, 2, 3));
 
         System.out.println(countingSet.getCount());
-    }
-
-    public void remove(Object obj) {
-       set.remove(obj);
-    }
-
-    public int size() {
-        return set.size();
-    }
-
-    public void removeAll(Collection c) {
-        set.removeAll(c);
     }
 }
