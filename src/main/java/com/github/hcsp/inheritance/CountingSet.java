@@ -6,18 +6,31 @@ import java.util.HashSet;
 
 public class CountingSet extends HashSet<Object> {
     /** 统计"有史以来"向该集合中添加过的元素个数 */
+    HashSet<Object> set = new HashSet<>();
     private int count = 0;
 
     @Override
     public boolean add(Object obj) {
         count++;
-        return super.add(obj);
+        return set.add(obj);
+    }
+
+    public boolean remove(Object obj){
+        return set.remove(obj);
+    }
+    public  int size(){
+        return  set.size();
+    }
+
+    @Override
+    public boolean removeAll(Collection o) {
+        return set.remove(o);
     }
 
     @Override
     public boolean addAll(Collection c) {
         count += c.size();
-        return super.addAll(c);
+        return set.addAll(c);
     }
 
     public int getCount() {
