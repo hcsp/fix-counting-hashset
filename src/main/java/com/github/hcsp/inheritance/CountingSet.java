@@ -5,22 +5,21 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class CountingSet {
-    /**
-     * 统计"有史以来"向该集合中添加过的元素个数
-     */
-    HashSet<Object> hashset = new HashSet<>();
+    /** 统计"有史以来"向该集合中添加过的元素个数 */
+    HashSet<Object> set = new HashSet<>();
+
     private int count = 0;
 
-//    @Override
+
     public boolean add(Object obj) {
         count++;
-        return hashset.add(obj);
+        return set.add(obj);
     }
 
-//    @Override
+
     public boolean addAll(Collection c) {
         count += c.size();
-        return hashset.addAll(c);
+        return set.addAll(c);
     }
 
     public int getCount() {
